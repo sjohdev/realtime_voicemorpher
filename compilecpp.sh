@@ -3,9 +3,7 @@
 # Usage: ./compilecpp.sh filename
 
 
-# Prompt the user for the cpp filenames:
-#echo "Gimme a cpp filename (skip the file extension):"
-#read filename
+# Get the filename from input argument 1:
 filename=$1
 echo "Compiling file: $filename.cpp" 
 
