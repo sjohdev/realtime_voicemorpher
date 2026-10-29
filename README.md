@@ -1,2 +1,2 @@
-# Realtime_Voice Morpher
-Realtime voice morpher prototyed in Python and implemented in C++
+# Realtime Voice Morpher
+Realtime voice morpher: Prototyped in Python and implemented in C++
