@@ -22,9 +22,9 @@ static int audioCallback(const void* inputBuffer, void* outputBuffer,
                          PaStreamCallbackFlags statusFlags,
                          void* userData) {
     // Cast userData to our custom structure
-    auto* user = static_cast<PAUserData*>(userData);
-    auto* out = static_cast<float*>(outputBuffer);
-    const auto* in = static_cast<const float*>(inputBuffer);
+    PAUserData* user = static_cast<PAUserData*>(userData);
+    float* out = static_cast<float*>(outputBuffer);
+    const float* in = static_cast<const float*>(inputBuffer);
     
     // Prevent unused variable warnings (in case they are not used later)
     (void) timeInfo;

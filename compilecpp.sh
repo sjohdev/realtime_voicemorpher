@@ -7,6 +7,8 @@
 filename=$1
 echo "Compiling file: $filename.cpp" 
 
+# remove old executable:
+#rm $filename
 # Compiling and linking with included libraries: 
 g++ $filename.cpp -lfftw3 -lportaudio -o $filename
 
