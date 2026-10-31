@@ -33,7 +33,7 @@ static int audioCallback(const void* inputBuffer, void* outputBuffer,
     if (inputBuffer == nullptr) {
         for(unsigned i = 0; i<framesPerBuffer; i++) {
             // If there is no input, output silence
-            *out++ = 0;
+            *out++ = 0.0;
         }
     } else {
         for(unsigned i = 0; i<framesPerBuffer; i++) {
@@ -51,7 +51,7 @@ static int audioCallback(const void* inputBuffer, void* outputBuffer,
         
         // Example: zero out all FFT bins (this would mute the audio)
         for(int i = 0; i<framesPerBuffer; i++) {
-            user->fftOutput[i] = 0;
+            user->fftOutput[i] = 0.0;
         }
         
         // Reverse FFT would go here
@@ -65,7 +65,7 @@ int main() {
     PaStream* stream;
 
     // Initialize user data
-    userData.sinePhase = 0;
+    userData.sinePhase = 0.0;
     userData.fftInput = fftw_alloc_real(FRAMES_PER_BUFFER); 
     userData.fftOutput = fftw_alloc_real(FRAMES_PER_BUFFER);
     userData.fftPlan = fftw_plan_r2r_1d(FRAMES_PER_BUFFER, userData.fftInput, userData.fftOutput, FFTW_R2HC, FFTW_ESTIMATE);
