@@ -74,13 +74,14 @@ int main() {
     err = Pa_Initialize();
     if (err != paNoError) std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
 
+    unsigned long ULONGS_PER_BUFFER = FRAMES_PER_BUFFER;
     // Open an audio I/O stream
     err = Pa_OpenDefaultStream(&stream,
                                1,          // mono input
                                1,          // mono output
                                paFloat32,  // 32 bit floating point output
                                SAMPLE_RATE,
-                               FRAMES_PER_BUFFER,
+                               ULONGS_PER_BUFFER,
                                audioCallback,
                                &userData);
     
